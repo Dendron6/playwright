@@ -25,19 +25,7 @@ module.exports = {
     },
 
 
-    // async queryErrorCatch(queryError = query) {
-    //     const listOfErrors = ["Please call us so we can help you schedule.", "We have a technical problem", "Tenemos un problema técnico"]
-    //     if (await $('h2').isExisting() && listOfErrors.includes(await $('h2').getText())) {
-    //         await sql.connect(config)
-    //         const result = await sql.query(queryError)
-    //         await browser.pause(500)
-    //         await console.log("________________________________________________")
-    //         await console.log("Time of the error: " + new Date().toUTCString())
-    //         await console.log(result.recordset)
-    //         await console.log(await $('h2').getText())
-    //         await console.log("________________________________________________")
-    //     }
-    // },
+
 
     async returnListOfValuesFromDataBase(query){
         let ls = []
