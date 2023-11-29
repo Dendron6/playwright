@@ -1,6 +1,5 @@
 const sql = require('mssql')
 const config = require('./loginConfigSQL')
-const providerRadOnc = require("./providernv/providerRadOnc");
 require('dotenv').config()
 
 const query = `SELECT TOP (3) [ErrorId]
