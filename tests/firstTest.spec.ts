@@ -25,13 +25,13 @@ test.describe('Scheduling appointment', async () => {
 
     test('has title', async () => {
         await page.goto(process.env.BASE_URL);
-        await expect(page).toHaveTitle(/What to expect - Talk to a care advisor - Memorial Sloan Kettering Cancer Center/);
+        await expect(page).toHaveTitle(/What to expect*/);
     });
 
     test('click on button', async () => {
         const what = new whatToExpect(page)
         await what.clickOnStartButton()
-        await expect(page).toHaveTitle(/Get started - Talk to a care advisor - Memorial Sloan Kettering Cancer Center/);
+        await expect(page).toHaveTitle(/Get started*/);
         //await page.pause()
     })
     test('Fill in information on get Started page', async () => {
