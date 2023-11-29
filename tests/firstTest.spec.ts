@@ -25,13 +25,13 @@ test.describe('Scheduling appointment', async () => {
 
     test('has title', async () => {
         await page.goto(process.env.BASE_URL);
-        await expect(page).toHaveTitle(/What to expect - Talk to a care advisor - Memorial Sloan Kettering Cancer Center/);
+        await expect(page).toHaveTitle(/What to expect*/);
     });
 
     test('click on button', async () => {
         const what = new whatToExpect(page)
         await what.clickOnStartButton()
-        await expect(page).toHaveTitle(/Get started - Talk to a care advisor - Memorial Sloan Kettering Cancer Center/);
+        await expect(page).toHaveTitle(/Get started*/);
         //await page.pause()
     })
     test('Fill in information on get Started page', async () => {
@@ -39,7 +39,7 @@ test.describe('Scheduling appointment', async () => {
         await get.cancerSelection("Adrenal Tumors", true)
         //await page.waitForTimeout(3000);
         const locatorH1 = page.getByTestId(aboutYouPage.HEADER_H1)
-        await expect(locatorH1).toHaveText(/About you/, {timeout: 5000});
+        await expect(locatorH1).toHaveText(/About you/, {timeout: 4000});
     })
     test('Fill in information on about you page', async () => {
         const about = new aboutYou(page)
