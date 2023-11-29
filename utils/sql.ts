@@ -48,23 +48,4 @@ module.exports = {
         return ls.sort()
     },
 
-//     async report(cancerType) {
-//
-//         queryError = `SELECT derivedtbl_1.Cancer, ProviderGroups.GroupID, ProviderGroups.Name, ProviderGroupList.ProviderID, ProviderIDs.Provider, ProviderGroupList.VisitID, ProviderGroupList.DeptID1, ProviderGroupList.DeptID2,
-//                   ProviderGroupList.DeptID3
-// FROM     CancerProviderSurveyMap WITH (NOLOCK) INNER JOIN
-//                       (SELECT Cancer, Phone, Email, VisitTypeId, ProviderId, DeptId, EngageSurveyId, ProviderHourBuffer, LanguageCode, CancerTypeID
-//                        FROM      CancerTypes WITH (NOLOCK)
-//                        WHERE   (LanguageCode = 'en-US')) AS derivedtbl_1 ON CancerProviderSurveyMap.CancerID = derivedtbl_1.CancerTypeID INNER JOIN
-//                   ProviderGroups WITH (NOLOCK) ON CancerProviderSurveyMap.ProviderGroupID = ProviderGroups.GroupID INNER JOIN
-//                   ProviderGroupList WITH (NOLOCK) ON ProviderGroups.GroupID = ProviderGroupList.GroupID INNER JOIN
-//                   ProviderIDs WITH (NOLOCK) ON ProviderGroupList.ProviderID = ProviderIDs.ProviderID
-// Where Cancer like '${cancerType}'+'%' and ProviderGroupList.GroupID like '${providerRadOnc.GroupID[cancerType]}'
-// ORDER BY derivedtbl_1.Cancer`
-//
-//         await sql.connect(config)
-//         const result = await sql.query(queryError)
-//         return result
-//     }
 
-}
