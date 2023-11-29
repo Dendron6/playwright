@@ -1,0 +1,32 @@
+{
+  "name": "playright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "env-cmd -f .dev.env playwright test ./tests/example.spec.ts --headed",
+    "uitest": "playwright test ./tests/example.spec.ts --headed",
+    "pasCallBackDev": "env-cmd -f .dev.env playwright test tests/firstTest.spec.ts --headed",
+    "pasCallBackUat": "env-cmd -f .uat.env playwright test tests/firstTest.spec.ts --headed",
+    "parameter": "env-cmd -f .dev.env playwright test tests/parametralization.spec.ts --headed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^8.3.1",
+    "@playwright/test": "^1.40.0",
+    "@types/convert-excel-to-json": "^1.7.4",
+    "@types/jquery": "^3.5.28",
+    "@types/node": "^20.9.3",
+    "exceljs": "^4.4.0",
+    "moment": "^2.29.4",
+    "mssql": "^9.0.1",
+    "xlsx": "^0.18.5"
+  },
+  "dependencies": {
+    "chromedriver": "^119.0.1",
+    "dotenv": "^16.3.1",
+    "env-cmd": "^10.1.0"
+  }
+}
