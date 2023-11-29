@@ -39,7 +39,7 @@ test.describe('Scheduling appointment', async () => {
         await get.cancerSelection("Adrenal Tumors", true)
         //await page.waitForTimeout(3000);
         const locatorH1 = page.getByTestId(aboutYouPage.HEADER_H1)
-        await expect(locatorH1).toHaveText(/About you/, {timeout: 5000});
+        await expect(locatorH1).toHaveText(/About you/, {timeout: 4000});
     })
     test('Fill in information on about you page', async () => {
         const about = new aboutYou(page)
