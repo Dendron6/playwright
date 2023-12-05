@@ -1,0 +1,8 @@
+stages:
+  - stage: __default
+    jobs:
+      - job: Sanity_tests
+        steps:
+            script: | 
+              npm update
+              npm run firstTestDev
