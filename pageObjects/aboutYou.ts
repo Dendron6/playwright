@@ -29,7 +29,7 @@ export class aboutYou {
      * @returns
      */
     async randomPatient(param:object){
-        console.log(JSON.stringify(param))
+        // console.log(JSON.stringify(param))
         const data = {firstName:faker.person.firstName(), lastName:faker.person.lastName(),
             dob: moment(faker.date.birthdate({min: 1950, max: 2001, refDate: '20.11.1990', mode: 'year'})).format('YYYY-MM-DD'),
             gender: 'Man', sex: "Male", address: faker.location.buildingNumber()+ " " + faker.location.street(), zip: '10001',
