@@ -42,9 +42,10 @@ export class aboutYou {
         await this.page.getByTestId('textInput_altFirstName').fill(data.firstName);
         await this.page.getByTestId('textInput_altLastName').fill(data.lastName);
         await this.page.getByTestId('textInput_altDatePicker').fill(data.dob);
-
-        await this.page.locator('#altGenderSelector_SelectInput').fill(data.gender);
-        await this.page.getByLabel('Gender *').press('Tab');
+        await this.page.locator('.css-19bb58m').first().click();
+        await this.page.getByText('Man', { exact: true }).click();
+        // await this.page.locator('#altGenderSelector_SelectInput').fill(data.gender);
+        // await this.page.locator('#altGenderSelector_SelectInput').press('Tab');
         if(data.sex === "Male"){
             await this.page.locator('#radio-altAssignedSexAtBirth-0').click();
         }else{
