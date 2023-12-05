@@ -2,37 +2,24 @@ const sql = require('mssql')
 const config = require('./loginConfigSQL')
 require('dotenv').config()
 
-const query = `SELECT TOP (3) [ErrorId]
-,[Message]
-,[DateTime]
-FROM [SelfScheduling].[dbo].[Errors]
-order by ErrorId desc;`
 
 
-module.exports = {
-    async returnOfQuery(query) {
+const query1 = `SELECT TOP (3)
+      [SubmissionDate]
+      ,[Rating]
+      ,[Comments]
+      ,[AppointmentTypeID]
+  FROM [SelfScheduling].[dbo].[Feedback]
+  ORDER BY SubmissionDate Desc`
+
+export async function returnOfQuery() {
         await sql.connect(config) //  browser.config.SQL_config
-        const result = await sql.query(query)
+        const result = await sql.query(query1)
         return result.recordset
 
-    },
-    async returnOfProviderQuery(query, providerName) {
-        const pool = await sql.connect(config) //  browser.config.SQL_config
-        const result = await pool.request().input('provider', sql.VarChar, providerName).query(query)
-        return result
-
-    },
+    }
 
 
 
-
-    async returnListOfValuesFromDataBase(query){
-        let ls = []
-        const x = await this.returnOfQuery(query)
-        for(let i = 0; i < x.length; i++){
-            ls.push(x[i].name)
-        }
-        return ls.sort()
-    },
 
 
