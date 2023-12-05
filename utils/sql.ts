@@ -1,7 +1,5 @@
-// import sql = require('mssql')
-import {config} from './loginConfigSQL'
-// import {connect, query} from "@types/mssql";
-import sql = require ("mssql");
+const sql = require('mssql')
+const config = require('./loginConfigSQL')
 require('dotenv').config()
 
 
